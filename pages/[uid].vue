@@ -9,7 +9,7 @@ const { data: page } = useAsyncData(route.params.uid as string, () =>
       "testimonial.quote",
       "testimonial.avatar",
       "testimonial.name",
-      "testimonial.job_title",
+      "testimonial.title",
     ],
   })
 );

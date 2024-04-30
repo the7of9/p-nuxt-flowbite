@@ -3,19 +3,19 @@ import { components } from "~/slices";
 
 const prismic = usePrismic();
 const { data: page } = useAsyncData("index", () =>
-  prismic.client.getSingle("homepage", {
+  prismic.client.getSingle("home", {
     fetchLinks: [
       "testimonial.quote",
       "testimonial.avatar",
       "testimonial.name",
-      "testimonial.job_title",
+      "testimonial.title",
     ],
   })
 );
 
 useSeoMeta({
-  title: page.value?.data.meta_title,
-  description: page.value?.data.meta_description,
+  title: page.value?.data.meta_title ?? undefined,
+  description: page.value?.data.meta_description ?? undefined,
 });
 </script>
 
